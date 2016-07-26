@@ -1,0 +1,44 @@
+#container{
+	width: 900px;
+	margin: 0px auto;
+}
+#left_container{
+	width: 400px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#right_container{
+	width: 300px;
+	display: inline-block;
+	vertical-align: top;
+}
+img{
+	display: inline-block;
+	margin: 10px;
+
+}
+
+p, h1{
+	text-align: center;
+}
+
+#add_user_container{
+	width: 300px;
+	text-align: right;
+}
+
+#add_user_container input{
+	margin-bottom: 10px;
+}
+
+#add_user_container input:last-child{
+	margin-right: 5px;
+}
+
+.card{
+	width: 200px;
+	display: inline-block;
+	margin-top: 20px;
+	border: solid black 2px;
+}

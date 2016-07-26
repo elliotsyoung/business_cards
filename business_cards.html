@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Functions</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script>
+		$(document).ready(function(){
+			console.log("document loaded");
+
+			$('form').submit(function(){
+				$('#right_container').append(
+					"<div class='card'><h1>" + 
+					$("#fname").val() + " " + 
+					$("#lname").val() + "</h1><p>" 
+					+ $("#description").val() 
+					+ "</p></div>"
+					);
+
+				$(".clearable").val("");
+
+				$(".card:last-child").children("p").toggle();
+
+				return false;
+			});
+
+			$(document).on("click", ".card", function(){
+				$(this).children("p").toggle();
+				console.log("card clicked");
+			})
+		});
+	</script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="left_container">
+			<h1>This is the left side content</h1>
+			<div id="add_user_container">
+				<h1>Add User</h1>
+				<form>
+					First name:
+					<input id="fname" class="clearable" type="text" name="firstname"> <br>
+					Last name:
+					<input id="lname" class="clearable" type="text" name="lastname"> <br>
+					<textarea id="description" class="clearable" rows="4" cols="40" name="comment" form="usrform" placeholder="Describe yourself"></textarea>
+					<input type="submit" name="submit">
+				</form>
+			</div>
+		</div>
+		<div id="right_container">
+			<h1>This is the right side content</h1>
+		</div>
+	</div>
+</body>
+</html>
